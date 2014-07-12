@@ -1,3 +1,13 @@
+@import url(http://fonts.googleapis.com/css?family=EB+Garamond|Playfair+Display+SC);
+
 .page.old {
     background: rgb(224, 215, 175) !important;
+}
+
+.old .title {
+    font-family: 'Playfair Display SC', serif !important;
+}
+    
+.old .body {
+    font-family: 'EB Garamond', serif !important;
 }

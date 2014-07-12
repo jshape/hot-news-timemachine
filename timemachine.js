@@ -55,8 +55,8 @@ function replaceArticle(oldArticle, website) {
         page = "#page";
     }
 
-    $(title).html(oldArticle.title);
-    $(body).html(oldArticle.body);
+    $(title).html(oldArticle.title).addClass("title");
+    $(body).html(oldArticle.body).addClass("body");
     $(date).html(oldArticle.date);
     $(page).addClass("page old");
 }
