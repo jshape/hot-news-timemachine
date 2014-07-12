@@ -13,7 +13,7 @@ function getArticleKeywords(website, callback) {
         outputMode: "json",
     }, function(data) {
         var keywords = data.concepts.map(function(keywordObject) {
-            return keywordObject.text;
+            return "("+keywordObject.text.replace(/ /g, " AND ")+")";
         });
         console.log("ALCHEMY KEYWORDS", keywords);
         
