@@ -40,20 +40,23 @@ function getOldArticle(keywords, callback) {
         var article = {
             title: troveArticle.heading,
             body: troveArticle.articleText,
+            date: troveArticle.date,
         };
         callback(article);   
     });
 };
 
 function replaceArticle(oldArticle, website) {
-    var title, body;
+    var title, body, date;
     if (website === "www.news.com.au") {
         title = ".story-headline h1.heading";
         body = ".story-body";
+        date = ".datestamp";
     }
 
     $(title).html(oldArticle.title);
     $(body).html(oldArticle.body);
+    $(date).html(oldArticle.date);
 }
 
 function timemachine() {
