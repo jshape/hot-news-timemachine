@@ -17,7 +17,12 @@ function getArticleKeywords(website, callback) {
         var keywords = data.keywords.map(function(keywordObject) {
             return keywordObject.text;
         });
-        callback(keywords);
+        
+        if (keywords.length === 0) {
+            getArticleKeywords(website, callback);
+        } else {
+            callback(keywords);
+        }
     });
 };
 
