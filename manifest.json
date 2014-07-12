@@ -9,5 +9,8 @@
       "css": ["timemachine.css"],
       "js": ["jquery.js", "timemachine.js"]
     }
+  ],
+  "permissions": [
+    "http://access.alchemyapi.com/"
   ]
 }
