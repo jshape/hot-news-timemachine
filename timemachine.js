@@ -40,7 +40,7 @@ function replaceArticle(oldArticle, website) {
 }
 
 function timemachine() {
-    var website = "http://news.com.au";
+    var website = window.location.href;
     var keywords = getArticleKeywords(website, getOldArticle);
 //    replaceArticle(oldArticle, website);
 };
