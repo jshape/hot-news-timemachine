@@ -18,19 +18,19 @@ function getArticleKeywords(website, callback) {
     });
 };
 
-function getOldArticle(keywords) {
+function getOldArticle(keywords, callback) {
     var article = {
         title: "It's the 1900s!",
         body: "An example article from the 1900s",
     };
     alert(keywords);
 
-    return article;
+    callback(article);
 };
 
 function replaceArticle(oldArticle, website) {
     var title, body;
-    if (website === "http://news.com.au") {
+    if (website === "www.news.com.au") {
         title = ".story-headline h1.heading";
         body = ".story-body";
     }
@@ -41,8 +41,11 @@ function replaceArticle(oldArticle, website) {
 
 function timemachine() {
     var website = window.location.href;
-    var keywords = getArticleKeywords(website, getOldArticle);
-//    replaceArticle(oldArticle, website);
+    var keywords = getArticleKeywords(website, function(keywords) {
+        getOldArticle(keywords, function(oldArticle) {
+            replaceArticle(oldArticle, window.location.hostname);
+        });
+    });
 };
 
 timemachine();
