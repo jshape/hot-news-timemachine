@@ -47,16 +47,18 @@ function getOldArticle(keywords, callback) {
 };
 
 function replaceArticle(oldArticle, website) {
-    var title, body, date;
+    var title, body, date, page;
     if (website === "www.news.com.au") {
         title = ".story-headline h1.heading";
         body = ".story-body";
         date = ".datestamp";
+        page = "#page";
     }
 
     $(title).html(oldArticle.title);
     $(body).html(oldArticle.body);
     $(date).html(oldArticle.date);
+    $(page).addClass("page old");
 }
 
 function timemachine() {
