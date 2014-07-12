@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=EB+Garamond|Playfair+Display+SC);
 
 .page.old {
+    padding-top: 150px;
     background: rgb(224, 215, 175) !important;
 }
 
@@ -22,16 +23,22 @@
     font-family: 'EB Garamond', serif !important;
 
     background: rgb(234, 225, 185) !important;
-    border: solid 6px rgb(236, 215, 194);
+    box-shadow: 0px 20px 2px rgba(0,0,0, 0.3);
 }
 
 .trove-banner > div {
+    width: 1000px;
+    margin: auto;
+}
+
+.trove-banner > div > div {
     display: table-cell;
+    max-width: 300px;
     padding: 10px;
 
     vertical-align: top;
 }
 
-.trove-banner > div > span {
+.trove-banner > div > div > span {
     display: block;
 }

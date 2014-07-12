@@ -87,7 +87,7 @@ function addBanner(oldArticle, keywords) {
     }).join(", ");
     banner += "</div>";
 
-    $("<div>"+banner+"</div>").prependTo("body").addClass("trove-banner");
+    $("<header><div>"+banner+"</div></header>").prependTo("body").addClass("trove-banner");
 }
 
 function span(content) {
