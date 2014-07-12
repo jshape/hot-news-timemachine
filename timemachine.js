@@ -51,13 +51,13 @@ function replaceArticle(oldArticle, website) {
     if (website === "www.news.com.au") {
         title = ".story-headline h1.heading";
         body = ".story-body";
-        date = ".datestamp";
+        date = ".date-and-time";
         page = "#page";
     }
 
     $(title).html(oldArticle.title).addClass("title");
     $(body).html(oldArticle.body).addClass("body");
-    $(date).html(oldArticle.date);
+    $(date).html("Trove Article Publication Date: " + oldArticle.date);
     $(page).addClass("page old");
 }
 
