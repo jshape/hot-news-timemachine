@@ -59,6 +59,8 @@ function replaceArticle(oldArticle, website) {
     $(body).html(oldArticle.body).addClass("body");
     $(date).html("Trove Article Publication Date: " + oldArticle.date);
     $(page).addClass("page old");
+    
+    $("<div>FROM TROVE PUBLICATION</div>").prependTo("body").addClass("trove-banner");
 }
 
 function timemachine() {

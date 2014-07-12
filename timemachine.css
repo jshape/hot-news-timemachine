@@ -11,3 +11,11 @@
 .old .body {
     font-family: 'EB Garamond', serif !important;
 }
+
+.trove-banner {
+    background: rgb(234, 225, 185) !important;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    border: solid 6px rgb(236, 215, 194);
+}
