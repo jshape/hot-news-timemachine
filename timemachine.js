@@ -3,6 +3,7 @@ var ALCHEMY_API_URL = "http://access.alchemyapi.com/calls/url/URLGetRankedConcep
 var TROVE_API_KEY = "eoudhjlngldfnmcm";
 var TROVE_API_URL = "http://api.trove.nla.gov.au/result";
 var NUMBEROFKEYWORDS = 4;
+var NEWSLIMITED = ["www.news.com.au", "www.theaustralian.com.au", "www.heraldsun.com.au", "www.couriermail.com.au", "www.dailytelegraph.com.au", "www.themercury.com.au", "www.ntnews.com.au"]
 
 
 
@@ -50,7 +51,7 @@ function getOldArticle(keywords, callback) {
 
 function replaceArticle(oldArticle, website) {
     var title, body, date, page;
-    if (website === "www.news.com.au") {
+    if (NEWSLIMITED.indexOf(website) !== -1) {
         title = ".story-headline h1.heading";
         body = ".story-body";
         date = ".date-and-time";

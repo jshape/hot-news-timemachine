@@ -5,7 +5,7 @@
   "description": "Browser plugin that substitutes a serendipitous historical news article into your current reading matter",
   "content_scripts": [
     {
-      "matches": ["http://www.news.com.au/*"],
+      "matches": ["http://www.news.com.au/*", "http://www.theaustralian.com.au/*", "http://www.heraldsun.com.au//*", "http://www.couriermail.com.au/*", "http://www.dailytelegraph.com.au/*", "http://www.themercury.com.au/*", "http://www.ntnews.com.au/*"],
       "css": ["timemachine.css"],
       "js": ["jquery.js", "timemachine.js"]
     }
