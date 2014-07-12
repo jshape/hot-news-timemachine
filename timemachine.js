@@ -67,10 +67,17 @@ function replaceArticle(oldArticle, website) {
 function addBanner(oldArticle, keywords) {
     var banner = "";
 
+    banner += image("HNTM-logo.gif");
+
     banner += "<span>This article was originally published in "+oldArticle.publication+", "+oldArticle.date+"</span>";
-    banner += "<span><a href='"+oldArticle.url+"'>View it on the Trove Newspaper Archive website</a></span>";
+
+    banner += "<span>";
+    banner += image("trove-logo-del.gif");
+    banner += "<a href='"+oldArticle.url+"'>View it on the Trove Newspaper Archive website</a>";
+    banner += "</span>";
     
-    banner += "<span>View more related content at HuNI (The Humanities Networked Infrastructure): ";
+    banner += "<span>";
+    banner += image("huni-logo-nav.png");
     banner += keywords.map(function(keyword) {
         return "<a href='http://staging.huni.net.au/#/results?q="+keyword+"'>"+keyword+"</a>";
     }).join(", ");
@@ -78,6 +85,10 @@ function addBanner(oldArticle, keywords) {
 
     $("<div>"+banner+"</div>").prependTo("body").addClass("trove-banner");
 }
+
+function image(imageName) {
+    return "<img src='"+chrome.extension.getURL("/images/"+imageName)+"'/>";
+};
 
 function timemachine() {
     var website = window.location.href;

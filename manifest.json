@@ -3,6 +3,7 @@
   "version": "0.1",
   "manifest_version": 2,
   "description": "Browser plugin that substitutes a serendipitous historical news article into your current reading matter",
+  "web_accessible_resources": ["/images/*"],
   "content_scripts": [
     {
       "matches": ["http://www.news.com.au/*"],
