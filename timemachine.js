@@ -13,7 +13,7 @@ function getArticleKeywords(website, callback) {
         outputMode: "json",
     }, function(data) {
         var keywords = data.concepts.map(function(keywordObject) {
-            return "("+keywordObject.text.replace(/ /g, " AND ")+")";
+            return keywordObject.text;
         });
         console.log("ALCHEMY KEYWORDS", keywords);
         
@@ -43,6 +43,7 @@ function getOldArticle(keywords, callback) {
             date: troveArticle.date,
             url: troveArticle.troveUrl,
             publication: troveArticle.title.value,
+            keywords: keywords,
         };
         callback(article);   
     });
@@ -61,18 +62,33 @@ function replaceArticle(oldArticle, website) {
     $(body).html(oldArticle.body).addClass("body");
     $(date).html("Trove Article Publication Date: " + oldArticle.date);
     $(page).addClass("page old");
-    
-    var banner = "<span>This article was originally published in "+oldArticle.publication;
-    banner += ", "+oldArticle.date+"</span>";
+};
+
+function addBanner(oldArticle, keywords) {
+    var banner = "";
+
+    banner += "<span>This article was originally published in "+oldArticle.publication+", "+oldArticle.date+"</span>";
     banner += "<span><a href='"+oldArticle.url+"'>View it on the Trove Newspaper Archive website</a></span>";
+    
+    banner += "<span>View more related content at HuNI (The Humanities Networked Infrastructure): ";
+    banner += keywords.map(function(keyword) {
+        return "<a href='http://staging.huni.net.au/#/results?q="+keyword+"'>"+keyword+"</a>";
+    }).join(", ");
+    banner += "</span>";
+
     $("<div>"+banner+"</div>").prependTo("body").addClass("trove-banner");
 }
 
 function timemachine() {
     var website = window.location.href;
     var keywords = getArticleKeywords(website, function(keywords) {
-        getOldArticle(keywords, function(oldArticle) {
+        keywordQueries = keywords.map(function(keyword) {
+            return "("+keyword.replace(/ /g, " AND ")+")";
+        });
+
+        getOldArticle(keywordQueries, function(oldArticle) {
             replaceArticle(oldArticle, window.location.hostname);
+            addBanner(oldArticle, keywords);
         });
     });
 };
