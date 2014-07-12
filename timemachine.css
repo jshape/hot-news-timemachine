@@ -13,13 +13,25 @@
 }
 
 .trove-banner {
-    background: rgb(234, 225, 185) !important;
+    display: table-row;
     position: fixed;
-    width: 100%;
     z-index: 9999;
+
+    width: 100%;
+
+    font-family: 'EB Garamond', serif !important;
+
+    background: rgb(234, 225, 185) !important;
     border: solid 6px rgb(236, 215, 194);
 }
 
-.trove-banner span {
+.trove-banner > div {
+    display: table-cell;
+    padding: 10px;
+
+    vertical-align: top;
+}
+
+.trove-banner > div > span {
     display: block;
 }

@@ -44,6 +44,7 @@ function getOldArticle(keywords, callback) {
             date: troveArticle.date,
             url: troveArticle.troveUrl,
             publication: troveArticle.title.value,
+            publicationID: troveArticle.title.id,
             keywords: keywords,
         };
         callback(article);   
@@ -68,24 +69,30 @@ function replaceArticle(oldArticle, website) {
 function addBanner(oldArticle, keywords) {
     var banner = "";
 
-    banner += image("HNTM-logo.gif");
+    banner += "<div>";
+    banner += "<span style='float:left'>"+image("HNTM-logo.gif")+"</span>";
+    banner += "</div>";
 
-    banner += "<span>This article was originally published in "+oldArticle.publication+", "+oldArticle.date+"</span>";
-
-    banner += "<span>";
-    banner += image("trove-logo-del.gif");
-    banner += "<a href='"+oldArticle.url+"'>View it on the Trove Newspaper Archive website</a>";
-    banner += "</span>";
+    banner += "<div>";
+    banner += span(image("trove-logo-del.gif"));
+    banner += span("<a href='"+oldArticle.url+"'>"+oldArticle.title+"</a></span>");
+    banner += span("Published "+oldArticle.date);
+    banner += span("<a href='http://trove.nla.gov.au/ndp/del/title/"+oldArticle.publicationID+"'>"+oldArticle.publication+"</a>");
+    banner += "</div>";
     
-    banner += "<span>";
-    banner += image("huni-logo-nav.png");
+    banner += "<div>";
+    banner += span(image("huni-logo-nav.png"));
     banner += keywords.map(function(keyword) {
         return "<a href='http://staging.huni.net.au/#/results?q="+keyword+"'>"+keyword+"</a>";
     }).join(", ");
-    banner += "</span>";
+    banner += "</div>";
 
     $("<div>"+banner+"</div>").prependTo("body").addClass("trove-banner");
 }
+
+function span(content) {
+    return "<span>"+content+"</span>";
+};
 
 function image(imageName) {
     return "<img src='"+chrome.extension.getURL("/images/"+imageName)+"'/>";
