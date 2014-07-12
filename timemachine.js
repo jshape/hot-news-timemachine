@@ -1,5 +1,8 @@
 var ALCHEMY_API_KEY = "7a28e8d3c8c8e7baad81df241fcc3431cf086385";
 var ALCHEMY_API_URL = "http://access.alchemyapi.com/calls/url/URLGetRankedKeywords?";
+var TROVE_API_KEY = "eoudhjlngldfnmcm";
+var TROVE_API_URL = "http://api.trove.nla.gov.au/result";
+var NUMBEROFKEYWORDS = 3;
 
 
 
@@ -19,13 +22,23 @@ function getArticleKeywords(website, callback) {
 };
 
 function getOldArticle(keywords, callback) {
-    var article = {
-        title: "It's the 1900s!",
-        body: "An example article from the 1900s",
-    };
-    alert(keywords);
-
-    callback(article);
+    var keywordString = keywords.slice(0, NUMBEROFKEYWORDS).join(" ");
+    $.getJSON(TROVE_API_URL, {
+        key: TROVE_API_KEY,
+        zone: "newspaper",
+        encoding: "json",
+        n: 1,
+        include: "articletext",
+        q: keywordString,
+    }, function(data) {
+        console.log(data);
+        var troveArticle = data.response.zone[0].records.article[0];
+        var article = {
+            title: troveArticle.heading,
+            body: troveArticle.articleText,
+        };
+        callback(article);   
+    });
 };
 
 function replaceArticle(oldArticle, website) {

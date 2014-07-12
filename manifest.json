@@ -11,6 +11,7 @@
     }
   ],
   "permissions": [
-    "http://access.alchemyapi.com/"
+    "http://access.alchemyapi.com/",
+    "http://api.trove.nla.gov.au/"
   ]
 }
