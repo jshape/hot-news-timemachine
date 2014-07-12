@@ -41,6 +41,8 @@ function getOldArticle(keywords, callback) {
             title: troveArticle.heading,
             body: troveArticle.articleText,
             date: troveArticle.date,
+            url: troveArticle.troveUrl,
+            publication: troveArticle.title.value,
         };
         callback(article);   
     });
@@ -60,7 +62,10 @@ function replaceArticle(oldArticle, website) {
     $(date).html("Trove Article Publication Date: " + oldArticle.date);
     $(page).addClass("page old");
     
-    $("<div>FROM TROVE PUBLICATION</div>").prependTo("body").addClass("trove-banner");
+    var banner = "<span>This article was originally published in "+oldArticle.publication;
+    banner += ", "+oldArticle.date+"</span>";
+    banner += "<span><a href='"+oldArticle.url+"'>View it on the Trove Newspaper Archive website</a></span>";
+    $("<div>"+banner+"</div>").prependTo("body").addClass("trove-banner");
 }
 
 function timemachine() {

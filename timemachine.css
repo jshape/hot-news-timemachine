@@ -19,3 +19,7 @@
     z-index: 9999;
     border: solid 6px rgb(236, 215, 194);
 }
+
+.trove-banner span {
+    display: block;
+}
