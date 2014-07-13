@@ -47,4 +47,11 @@ theaustralian.com.au
 couriermail.com.au
 themercury.com.au
 NTnews.com.au
+brisbanetimes.com.au
+smh.com.au
+theage.com.au
+crikey.com.au
 
+Hot News Timemachine is currently configured to ALMOST work on the following Australian news websites:
+abc.net.au
+theguardian.com.au
