@@ -1,4 +1,5 @@
 Hot News Time Machine
+https://chrome.google.com/webstore/detail/hot-news-timemachine/dkkamedhkmcmfnkikmgjnliakdhlmaie
 
 
 Hot News Timemachine" is a fun Google Chrome browser extension that shows you that anything new in the news, is really old news.
