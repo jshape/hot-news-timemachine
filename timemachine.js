@@ -4,7 +4,10 @@ var TROVE_API_KEY = "eoudhjlngldfnmcm";
 var TROVE_API_URL = "http://api.trove.nla.gov.au/result";
 var NUMBEROFKEYWORDS = 4;
 var NEWSLIMITED = ["www.news.com.au", "www.theaustralian.com.au", "www.heraldsun.com.au", "www.couriermail.com.au", "www.dailytelegraph.com.au", "www.themercury.com.au", "www.ntnews.com.au"]
-
+var FAIRFAX = ["www.brisbanetimes.com.au", "www.smh.com.au", "www.theage.com.au"];
+var ABC = "www.abc.net.au"; 
+var GUARDIAN = "www.theguardian.com.au"; 
+var CRIKEY = "www.crikey.com.au";
 
 
 function getArticleKeywords(website, callback) {
@@ -58,6 +61,29 @@ function replaceArticle(oldArticle, website) {
         body = ".story-body";
         date = ".date-and-time";
         page = "#page";
+    } else if (FAIRFAX.indexOf(website) !== -1) {
+        title = ".cN-headingPage";
+        body = ".articleBody";
+        date = ".dtstamp";
+        page = ".outerWrap";
+    } else if (CRIKEY === website) {
+        title = ".entry-title";
+        body = ".post";
+        date = ".date";
+        page = "#wrapper";
+    } else if (ABC === website) {
+        title = ".article h1";
+        body = ".article .body";
+        date = ".published";
+        page = "body";
+
+        $(".article p").remove();
+        $(title).after("<div class='body'></div>");
+    } else if (GUARDIAN === website) {
+        title = ".news-article-title h1";
+        body = ".news-article-body";
+        date = ".news-article-title time";
+        page = "#main";
     }
 
     $(title).html(oldArticle.title).addClass("title");

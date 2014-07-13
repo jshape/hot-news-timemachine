@@ -6,7 +6,7 @@
   "web_accessible_resources": ["/images/*"],
   "content_scripts": [
     {
-      "matches": ["http://www.news.com.au/*", "http://www.theaustralian.com.au/*", "http://www.heraldsun.com.au/*", "http://www.couriermail.com.au/*", "http://www.dailytelegraph.com.au/*", "http://www.themercury.com.au/*", "http://www.ntnews.com.au/*"],
+      "matches": ["http://www.crikey.com.au/*", "http://www.theguardian.com.au/*", "http://www.abc.net.au/news/*", "http://www.brisbanetimes.com.au/*", "http://www.smh.com.au/*", "http://www.theage.com.au/*", "http://www.news.com.au/*", "http://www.theaustralian.com.au/*", "http://www.heraldsun.com.au/*", "http://www.couriermail.com.au/*", "http://www.dailytelegraph.com.au/*", "http://www.themercury.com.au/*", "http://www.ntnews.com.au/*"],
       "css": ["timemachine.css"],
       "js": ["jquery.js", "timemachine.js"]
     }
