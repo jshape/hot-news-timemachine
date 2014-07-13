@@ -3,6 +3,8 @@
 .page.old {
     padding-top: 150px;
     background: rgb(224, 215, 175) !important;
+
+    -webkit-filter: sepia(0.7) !important;
 }
 
 .old .title {
