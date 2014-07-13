@@ -1,6 +1,6 @@
 “HOT NEWS TIME MACHINE”
 
-Hot News Timemachine is a fun Google Chrome browser extension that shows you that anything new in the news, is really old news.
+Hot News Timemachine is a fun new Google Chrome browser extension that shows you that anything new in the news, is really old news.
 
 Hot News Timemachine provides you with a serendipitous and intriguing alternative to today’s shallow click-bait fluff.
 
@@ -8,7 +8,7 @@ When you click on an Aussie web news story, the Hot News Time Machine roars into
 
 Hot News Timemachine swaps out the boring, current “news” story that you are reading for a much more interesting, old fashioned one.
 
-If you want to investigate the amazing historical insights raised your discovered article more, then you can click the provided link to the Trove hosted original newspaper, a searchable scan of our rich media heritage. Or you can find related content from the Humanities Networked Infrastructure (HuNI) collection.
+If you want to investigate the amazing historical insights raised your discovered article further, then you can click the provided link to Trove’s original newspaper article, a searchable scan of our rich media heritage. Or you can find related content from the Humanities Networked Infrastructure (HuNI) collection.
 
 
 
@@ -29,7 +29,7 @@ TECHNICAL DETAILS:
 
 Hot News Timemachine was created by Kenni Bawden and James Edwards, for the GovHack2014 Hackerfest.
 
-I makes use of content the extensive digitised collection of Australian newspapers found at trove.nla.gov.au, and provides a link to additional relevant insights, gleaned from the Humanities Networked Infrastructure (HuNI) collection: huni.net.au/what-is-huni
+It makes use of content the extensive digitised collection of Australian newspapers found at trove.nla.gov.au, and provides a link to additional relevant insights, gleaned from the Humanities Networked Infrastructure (HuNI) collection: huni.net.au/what-is-huni
 
 Hot News Timemachine utilises the Concept Tagging engine, provided by the Alchemy API:
 www.alchemyapi.com/products/features/concept-tagging
@@ -47,3 +47,4 @@ theaustralian.com.au
 couriermail.com.au
 themercury.com.au
 NTnews.com.au
+
