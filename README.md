@@ -15,10 +15,7 @@ If you want to investigate the amazing historical insights raised your discovere
 
 HOW TO USE “HOT NEWS TIME MACHINE”:
 
-To install Hot News Timemachine, just launch Google Chrome browser, go to the following link:
-https://chrome.google.com/webstore/detail/hot-news-timemachine/dkkamedhkmcmfnkikmgjnliakdhlmaie
-
-Install the Hot News Timemachine Extension, and Bob’s your uncle.
+To install Hot News Timemachine, just launch Google Chrome browser and go to the Chrome Extensions Store. Search for "Hot News Time Machine", and click Add, and Bob’s your uncle.
 
 Navigate to a supported news site, sit back, and enjoy the serendipity.
 
