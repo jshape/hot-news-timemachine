@@ -6,7 +6,7 @@ var NUMBEROFKEYWORDS = 4;
 var NEWSLIMITED = ["www.news.com.au", "www.theaustralian.com.au", "www.heraldsun.com.au", "www.couriermail.com.au", "www.dailytelegraph.com.au", "www.themercury.com.au", "www.ntnews.com.au"]
 var FAIRFAX = ["www.brisbanetimes.com.au", "www.smh.com.au", "www.theage.com.au"];
 var ABC = "www.abc.net.au"; 
-var GUARDIAN = "www.theguardian.com.au"; 
+var GUARDIAN = "www.theguardian.com"; 
 var CRIKEY = "www.crikey.com.au";
 
 
@@ -80,16 +80,16 @@ function replaceArticle(oldArticle, website) {
         $(".article p").remove();
         $(title).after("<div class='body'></div>");
     } else if (GUARDIAN === website) {
-        title = ".news-article-title h1";
-        body = ".news-article-body";
-        date = ".news-article-title time";
-        page = "#main";
+        title = "#main-article-info h1";
+        body = "#article-body-blocks";
+        date = ".publication time";
+        page = "#wrapper";
     }
 
     $(title).html(oldArticle.title).addClass("title");
     $(body).html(oldArticle.body).addClass("body");
     $(date).html("Trove Article Publication Date: " + oldArticle.date);
-    $(page).addClass("page old");
+    $(page).addClass("page-hntm old");
 };
 
 function addBanner(oldArticle, keywords) {
