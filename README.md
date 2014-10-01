@@ -52,3 +52,4 @@ crikey.com.au
 Hot News Timemachine is currently configured to ALMOST work on the following Australian news websites:
 abc.net.au
 theguardian.com
+
